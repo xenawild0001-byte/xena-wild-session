@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Xena Wild Sessions | Official Profile</title>
+  <title>Xena Wild Sessions | Official Website</title>
 
   <meta name="description"
-        content="Explore the Xena Wild Sessions photo gallery, learn more about the sessions, and get in touch directly.">
+        content="Explore the Xena Wild Sessions photo gallery and get in touch directly.">
 
   <style>
     * {
@@ -16,7 +16,7 @@
     }
 
     html {
-      scroll-padding-top: 90px;
+      scroll-padding-top: 85px;
     }
 
     body {
@@ -28,24 +28,23 @@
     }
 
     header {
-      background: linear-gradient(135deg, #080808, #242018);
-      padding: 48px 20px;
+      padding: 55px 20px;
       text-align: center;
+      background: linear-gradient(135deg, #080808, #292318);
       border-bottom: 2px solid #d4af37;
+      scroll-margin-top: 80px;
     }
 
     header h1 {
       margin: 0;
       color: #e6c45a;
-      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-size: clamp(2rem, 6vw, 3.3rem);
       letter-spacing: 1px;
     }
 
     header p {
-      max-width: 600px;
-      margin: 12px auto 0;
       color: #ddd;
-      font-size: 1.05rem;
+      margin: 12px 0 0;
     }
 
     nav {
@@ -62,28 +61,24 @@
     }
 
     nav a {
-      display: inline-block;
       padding: 9px 15px;
-      border-radius: 6px;
-      color: #fff;
+      color: white;
       text-decoration: none;
-      font-size: 0.95rem;
       font-weight: bold;
-      transition: background 0.2s, color 0.2s;
+      border-radius: 6px;
+      transition: 0.2s;
     }
 
     nav a:hover,
     nav a:focus-visible {
       background: #d4af37;
       color: #111;
-      outline: none;
     }
 
     main {
-      width: 100%;
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 18px;
+      margin: auto;
+      padding: 22px 18px;
     }
 
     section {
@@ -96,26 +91,25 @@
       font-size: clamp(1.5rem, 4vw, 2rem);
       border-bottom: 1px solid #514626;
       padding-bottom: 10px;
-      margin-top: 0;
     }
 
     .hero {
       text-align: center;
-      padding: 45px 22px;
-      margin: 8px 0 20px;
-      background: linear-gradient(145deg, #1d1d1d, #121212);
-      border: 1px solid #383838;
+      padding: 40px 22px;
+      margin: 10px 0 25px;
+      background: linear-gradient(145deg, #202020, #141414);
+      border: 1px solid #393939;
       border-radius: 14px;
     }
 
     .hero h2 {
-      border: 0;
-      margin-bottom: 12px;
+      border: none;
+      margin-bottom: 10px;
     }
 
     .hero p {
       max-width: 650px;
-      margin: 0 auto 22px;
+      margin: 0 auto 20px;
       color: #ddd;
     }
 
@@ -123,15 +117,15 @@
       display: inline-block;
       padding: 12px 22px;
       margin: 5px;
-      border-radius: 7px;
       background: #d4af37;
       color: #111;
-      font-weight: bold;
       text-decoration: none;
-      transition: opacity 0.2s;
+      font-weight: bold;
+      border-radius: 7px;
     }
 
-    .button:hover {
+    .button:hover,
+    .button:focus-visible {
       opacity: 0.85;
     }
 
@@ -144,7 +138,7 @@
     .card {
       margin: 0;
       overflow: hidden;
-      background: #1c1c1c;
+      background: #1d1d1d;
       border: 1px solid #393939;
       border-radius: 10px;
     }
@@ -160,14 +154,12 @@
     .card figcaption {
       padding: 12px;
       color: #ddd;
-      font-size: 0.95rem;
     }
 
-    .about-box,
-    .contact-box {
+    .content-box {
       padding: 22px;
       background: #1b1b1b;
-      border: 1px solid #383838;
+      border: 1px solid #393939;
       border-radius: 10px;
     }
 
@@ -175,25 +167,16 @@
       text-align: center;
     }
 
-    .contact-box p {
-      color: #ddd;
-    }
-
     footer {
-      margin-top: 30px;
       padding: 25px 15px;
+      margin-top: 30px;
       text-align: center;
-      color: #aaa;
       background: #080808;
-      border-top: 1px solid #383838;
-      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #393939;
     }
 
     @media (max-width: 600px) {
-      header {
-        padding: 35px 15px;
-      }
-
       nav {
         gap: 3px;
         padding: 8px 4px;
@@ -205,7 +188,7 @@
       }
 
       main {
-        padding: 16px 12px;
+        padding: 15px 12px;
       }
 
       .gallery {
@@ -223,7 +206,7 @@
 
   <header id="home">
     <h1>Xena Wild Sessions</h1>
-    <p>Welcome to the official profile and photo gallery.</p>
+    <p>Wrestling Photos &amp; Private Sessions</p>
   </header>
 
   <nav aria-label="Main navigation">
@@ -235,8 +218,8 @@
 
   <main>
 
-    <section class="hero" aria-labelledby="welcome-heading">
-      <h2 id="welcome-heading">Welcome to Xena Wild Sessions</h2>
+    <section class="hero">
+      <h2>Welcome to Xena Wild Sessions</h2>
 
       <p>
         Explore the photo gallery, discover more about Xena Wild Sessions,
@@ -255,38 +238,38 @@
       <div class="gallery">
 
         <figure class="card">
-          <img src="images/IMG_0856.jpeg"
+          <img src="IMG_0856.jpeg"
                alt="Xena Wild Sessions photo 1"
                loading="lazy">
-          <figcaption>Xena Wild Sessions — Photo 1</figcaption>
+          <figcaption>Photo 1</figcaption>
         </figure>
 
         <figure class="card">
-          <img src="images/IMG_0865.jpeg"
+          <img src="IMG_0865.jpeg"
                alt="Xena Wild Sessions photo 2"
                loading="lazy">
-          <figcaption>Xena Wild Sessions — Photo 2</figcaption>
+          <figcaption>Photo 2</figcaption>
         </figure>
 
         <figure class="card">
-          <img src="images/IMG_0878.jpeg"
+          <img src="IMG_0878.jpeg"
                alt="Xena Wild Sessions photo 3"
                loading="lazy">
-          <figcaption>Xena Wild Sessions — Photo 3</figcaption>
+          <figcaption>Photo 3</figcaption>
         </figure>
 
         <figure class="card">
-          <img src="images/IMG_0879.jpeg"
+          <img src="IMG_0879.jpeg"
                alt="Xena Wild Sessions photo 4"
                loading="lazy">
-          <figcaption>Xena Wild Sessions — Photo 4</figcaption>
+          <figcaption>Photo 4</figcaption>
         </figure>
 
         <figure class="card">
-          <img src="images/IMG_0880.jpeg"
+          <img src="IMG_0880.jpeg"
                alt="Xena Wild Sessions photo 5"
                loading="lazy">
-          <figcaption>Xena Wild Sessions — Photo 5</figcaption>
+          <figcaption>Photo 5</figcaption>
         </figure>
 
       </div>
@@ -295,27 +278,29 @@
     <section id="about">
       <h2>About Xena Wild Sessions</h2>
 
-      <div class="about-box">
+      <div class="content-box">
         <p>
-          Welcome to Xena Wild Sessions, a dedicated profile for sharing
-          photos and information about the sessions.
+          Welcome to Xena Wild Sessions, a dedicated space for sharing
+          wrestling photography and memorable session experiences.
         </p>
 
         <p>
-          Browse the gallery to explore the collection. For questions,
-          enquiries, or further information, use the contact section
+          Browse the photo gallery to explore the collection.
+          For questions or enquiries, visit the Contact section
           to get in touch directly.
         </p>
+
+        <p>Thank you for visiting Xena Wild Sessions.</p>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
 
-      <div class="contact-box">
+      <div class="content-box contact-box">
         <p>
-          Have a question or want to get in touch?
-          Send a direct message on Signal.
+          Have a question or want to make an enquiry?
+          Contact me directly on Signal.
         </p>
 
         <a class="button"
