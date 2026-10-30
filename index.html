@@ -1,451 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Xena Wild Sessions | Official Website</title>
-
-  <meta name="description"
-        content="Explore Xena Wild Sessions, discover the photo gallery, and contact us for private session inquiries.">
-
-  <meta name="theme-color" content="#101010">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --gold: #d4af37;
-      --gold-light: #f0d77a;
-      --background: #101010;
-      --surface: #1a1a1a;
-      --border: #353535;
-      --text: #f5f5f5;
-      --muted: #bdbdbd;
-    }
-
-    html {
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      transition: 0.25s ease;
-    }
-
-    header {
-      padding: 75px 20px 65px;
-      text-align: center;
-      background:
-        radial-gradient(
-          ellipse at top,
-          #39301b 0%,
-          #17140f 45%,
-          #080808 100%
-        );
-      border-bottom: 1px solid var(--gold);
-      scroll-margin-top: 80px;
-    }
-
-    .brand-label {
-      color: var(--gold);
-      font-size: 0.8rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    header h1 {
-      margin: 0;
-      color: var(--gold-light);
-      font-size: clamp(2.3rem, 7vw, 4rem);
-      letter-spacing: 1px;
-      line-height: 1.2;
-    }
-
-    header p {
-      color: #d0d0d0;
-      margin: 18px 0 0;
-      font-size: 1.05rem;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 13px;
-      background: rgba(20, 20, 20, 0.97);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-
-    nav a {
-      padding: 9px 17px;
-      color: #eee;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: bold;
-      border-radius: 6px;
-    }
-
-    nav a:hover,
-    nav a:focus-visible {
-      background: var(--gold);
-      color: #111;
-    }
-
-    main {
-      max-width: 1150px;
-      margin: auto;
-      padding: 25px 20px;
-    }
-
-    section {
-      padding: 45px 0;
-      scroll-margin-top: 85px;
-    }
-
-    h2 {
-      color: var(--gold-light);
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      margin-bottom: 15px;
-      letter-spacing: 0.5px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    /* Homepage */
-
-    .hero {
-      text-align: center;
-      padding: 75px 25px;
-      margin: 20px 0 35px;
-      background:
-        linear-gradient(145deg, #242424, #141414);
-      border: 1px solid #45402f;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-    }
-
-    .hero-label {
-      color: var(--gold);
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .hero h2 {
-      border: none;
-      margin: 15px 0;
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto 28px;
-      color: #d0d0d0;
-      font-size: 1.05rem;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 13px 25px;
-      margin: 5px;
-      background: var(--gold);
-      color: #111;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 7px;
-      border: 1px solid var(--gold);
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .button-outline {
-      background: transparent;
-      color: var(--gold-light);
-      border-color: var(--gold);
-    }
-
-    .button-outline:hover,
-    .button-outline:focus-visible {
-      background: var(--gold);
-      color: #111;
-    }
-
-    /* Photo gallery */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      margin: 0;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      transition: transform 0.3s ease,
-                  border-color 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-    }
-
-    .card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      background: #222;
-    }
-
-    .card figcaption {
-      padding: 14px;
-      color: #ddd;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* About and Contact */
-
-    .content-box {
-      padding: 28px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .content-box p {
-      color: #d0d0d0;
-    }
-
-    .contact-box {
-      text-align: center;
-      padding: 40px 25px;
-    }
-
-    .contact-box h3 {
-      color: var(--gold-light);
-      font-size: 1.4rem;
-      margin-top: 0;
-    }
-
-    .email-address {
-      display: block;
-      margin: 20px 0;
-      color: var(--gold-light);
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      text-decoration: none;
-      overflow-wrap: anywhere;
-    }
-
-    .email-address:hover {
-      color: white;
-    }
-
-    .contact-note {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    footer {
-      padding: 30px 15px;
-      margin-top: 35px;
-      text-align: center;
-      background: #080808;
-      color: #999;
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-
-    footer p {
-      margin: 5px 0;
-    }
-
-    footer span {
-      color: var(--gold);
-    }
-
-    /* Mobile layout */
-
-    @media (max-width: 600px) {
-      header {
-        padding: 55px 15px;
-      }
-
-      nav {
-        gap: 3px;
-        padding: 8px 4px;
-      }
-
-      nav a {
-        padding: 9px 11px;
-        font-size: 0.82rem;
-      }
-
-      main {
-        padding: 12px;
-      }
-
-      section {
-        padding: 30px 0;
-      }
-
-      .hero {
-        padding: 45px 17px;
-        margin: 12px 0 25px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .content-box {
-        padding: 20px;
-      }
-
-      .contact-box {
-        padding: 30px 16px;
-      }
-
-      .button {
-        padding: 12px 18px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- Website Header -->
-
-  <header id="home">
-    <div class="brand-label">Official Website</div>
-
-    <h1>Xena Wild Sessions</h1>
-
-    <p>Wrestling Photography &amp; Private Sessions</p>
-  </header>
-
-  <!-- Main Navigation -->
-
-  <nav aria-label="Main navigation">
-  <a href="#home">Home</a>
-  <a href="#photos">Photos</a>
-  <a href="#specialties">Specialties</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-  <main>
-
-    <!-- Homepage -->
-
-    <section class="hero">
-
-      <div class="hero-label">
-        Welcome to the Official Website
-      </div>
-
-      <h2>Xena Wild Sessions</h2>
-
-      <p>
-        Discover the world of Xena Wild Sessions through our photo gallery.
-        Explore memorable wrestling photography, learn more about the sessions,
-        and get in touch directly for inquiries and private session information.
-      </p>
-
-      <a class="button" href="#photos">
-        Explore Photo Gallery
-      </a>
-
-      <a class="button button-outline" href="#contact">
-        Contact Us
-      </a>
-
-    </section>
-
-    <!-- Photo Gallery -->
-
-    <section id="photos">
-
-      <h2>Photo Gallery</h2>
-
-      <p class="section-intro">
-        Explore the photo collection from Xena Wild Sessions.
-      </p>
-
-      <div class="gallery">
-
-        <figure class="card">
-          <img src="IMG_0856.jpeg"
-               alt="Xena Wild Sessions photo 1"
-               loading="lazy">
-          <figcaption>Photo 1</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="IMG_0865.jpeg"
-               alt="Xena Wild Sessions photo 2"
-               loading="lazy">
-          <figcaption>Photo 2</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="IMG_0878.jpeg"
-               alt="Xena Wild Sessions photo 3"
-               loading="lazy">
-          <figcaption>Photo 3</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="IMG_0879.jpeg"
-               alt="Xena Wild Sessions photo 4"
-               loading="lazy">
-          <figcaption>Photo 4</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="IMG_0880.jpeg"
-               alt="Xena Wild Sessions photo 5"
-               loading="lazy">
-          <figcaption>Photo 5</figcaption>
-        </figure>
-
-      </div>
-
-    </section>
-
-    <!-- About Section -->
-    /* Specialties */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Xena Wild Sessions | Official Website</title>
+
+<meta name="description" content="Explore Xena Wild Sessions, wrestling photography, specialties and private session inquiries.">
+
+<meta name="theme-color" content="#101010">
+
+<style>
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --gold: #d4af37;
+  --light-gold: #f0d77a;
+  --background: #101010;
+  --surface: #1c1c1c;
+  --border: #383838;
+  --text: #f5f5f5;
+  --muted: #bdbdbd;
+}
+
+html {
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  transition: 0.25s ease;
+}
+
+/* HEADER */
+
+header {
+  padding: 75px 20px;
+  text-align: center;
+  background: radial-gradient(ellipse at top, #40351d, #17140f 55%, #080808);
+  border-bottom: 1px solid var(--gold);
+}
+
+.brand-label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+header h1 {
+  color: var(--light-gold);
+  font-size: clamp(35px, 7vw, 58px);
+  margin: 12px 0;
+  line-height: 1.2;
+}
+
+header p {
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(18,18,18,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 9px 15px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+/* MAIN CONTENT */
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  padding: 45px 0;
+  scroll-margin-top: 85px;
+}
+
+h2 {
+  color: var(--light-gold);
+  font-size: clamp(26px, 4vw, 36px);
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 75px 25px;
+  margin: 25px 0 35px;
+  background: linear-gradient(145deg, #292929, #141414);
+  border: 1px solid #62512b;
+  border-radius: 16px;
+}
+
+.hero-label {
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 15px 0;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: #ddd;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-block;
+  padding: 12px 23px;
+  margin: 6px;
+  background: var(--gold);
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 7px;
+  border: 1px solid var(--gold);
+}
+
+.button:hover {
+  background: var(--light-gold);
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--light-gold);
+}
+
+/* FEATURED PROFILE */
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.featured-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.featured-card h3 {
+  color: var(--light-gold);
+  font-size: 27px;
+  margin-top: 0;
+}
+
+.featured-card p {
+  color: #ccc;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.card figcaption {
+  padding: 13px;
+  text-align: center;
+  color: #ddd;
+}
+
+/* SPECIALTIES */
 
 .specialties-grid {
   display: grid;
@@ -455,7 +251,7 @@
 }
 
 .specialty-category {
-  padding: 25px;
+  padding: 24px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -468,71 +264,264 @@
 }
 
 .specialty-category h3 {
-  color: var(--gold-light);
-  margin-top: 0;
+  color: var(--light-gold);
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
+  margin-top: 0;
 }
 
 .specialty-category ul {
   padding-left: 20px;
-  margin-bottom: 0;
-  color: #d0d0d0;
+  color: #ddd;
 }
 
 .specialty-category li {
   margin-bottom: 8px;
 }
 
+/* ABOUT AND CONTACT */
+
+.content-box {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.content-box p {
+  color: #d0d0d0;
+}
+
+.contact-box {
+  text-align: center;
+  padding: 40px 25px;
+}
+
+.contact-box h3 {
+  color: var(--light-gold);
+  font-size: 25px;
+}
+
+.email-address {
+  display: block;
+  margin: 18px 0;
+  color: var(--light-gold);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+/* SOCIAL LINKS */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 11px 20px;
+  color: var(--light-gold);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 15px;
+  margin-top: 35px;
+  text-align: center;
+  background: #080808;
+  color: #999;
+  border-top: 1px solid var(--border);
+}
+
+footer span {
+  color: var(--gold);
+}
+
+/* MOBILE RESPONSIVE */
+
 @media (max-width: 800px) {
   .specialties-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card img {
+    max-width: 400px;
+    margin: auto;
+  }
 }
 
 @media (max-width: 600px) {
+  header {
+    padding: 55px 15px;
+  }
+
+  nav {
+    gap: 2px;
+    padding: 8px 3px;
+  }
+
+  nav a {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  .hero {
+    padding: 45px 17px;
+  }
+
+  .gallery,
   .specialties-grid {
     grid-template-columns: 1fr;
   }
+
+  .content-box {
+    padding: 20px;
+  }
 }
-    <section id="about">
+</style>
+</head>
 
-      <h2>About Xena Wild Sessions</h2>
+<body>
 
-      <div class="content-box">
+<header id="home">
+  <div class="brand-label">Official Website</div>
+  <h1>Xena Wild Sessions</h1>
+  <p>Wrestling Photography &amp; Private Sessions</p>
+</header>
 
-        <p>
-          Welcome to Xena Wild Sessions, a dedicated space for wrestling
-          photography and memorable session experiences.
-        </p>
+<nav aria-label="Main navigation">
+  <a href="#home">Home</a>
+  <a href="#featured">Featured</a>
+  <a href="#photos">Photos</a>
+  <a href="#specialties">Specialties</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-        <p>
-          Our website provides a place to explore the photo collection
-          and learn more about the sessions. Whether you are visiting
-          for the photography or looking for information about private
-          sessions, we welcome you to explore.
-        </p>
+<main>
 
-        <p>
-          For inquiries, booking information, or further details,
-          please visit our Contact section.
-        </p>
+<!-- HOMEPAGE -->
 
-        <p>
-          Thank you for visiting Xena Wild Sessions.
-        </p>
+<section class="hero">
+  <div class="hero-label">Welcome to the Official Website</div>
 
-      </div>
+  <h2>Welcome to Xena Wild Sessions</h2>
 
-    </section>
-<section id="specialties" class="section">
-  <h2>Our Specialties</h2>
+  <p>
+    Discover wrestling, grappling, athletic experiences and professional
+    photography. Explore our gallery, learn about our specialties and
+    contact us for private session inquiries.
+  </p>
+
+  <a class="button" href="#photos">Explore Photos</a>
+  <a class="button button-outline" href="#contact">Get in Touch</a>
+</section>
+
+<!-- FEATURED PROFILE -->
+
+<section id="featured">
+  <h2>Featured Profile</h2>
+
   <p class="section-intro">
-    Explore a range of wrestling styles, match formats, training experiences,
-    and custom content options.
+    Discover the Xena Wild Sessions profile.
+  </p>
+
+  <div class="featured-card">
+    <img src="IMG_0856.jpeg" alt="Xena Wild Sessions featured profile">
+
+    <div>
+      <h3>Xena Wild</h3>
+
+      <p>
+        Welcome to Xena Wild Sessions, featuring wrestling,
+        grappling, strength, athletic competition and photography.
+      </p>
+
+      <p>
+        Based in New York and available for travel worldwide
+        for private session inquiries.
+      </p>
+
+      <a class="button" href="#contact">Booking Inquiries</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+
+<section id="photos">
+  <h2>Photo Gallery</h2>
+
+  <p class="section-intro">
+    Explore the photo collection from Xena Wild Sessions.
+  </p>
+
+  <div class="gallery">
+
+    <figure class="card">
+      <img src="IMG_0856.jpeg" alt="Xena Wild photo 1" loading="lazy">
+      <figcaption>Photo 1</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="IMG_0865.jpeg" alt="Xena Wild photo 2" loading="lazy">
+      <figcaption>Photo 2</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="IMG_0878.jpeg" alt="Xena Wild photo 3" loading="lazy">
+      <figcaption>Photo 3</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="IMG_0879.jpeg" alt="Xena Wild photo 4" loading="lazy">
+      <figcaption>Photo 4</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="IMG_0880.jpeg" alt="Xena Wild photo 5" loading="lazy">
+      <figcaption>Photo 5</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+
+<section id="specialties">
+  <h2>Our Specialties</h2>
+
+  <p class="section-intro">
+    Explore our wrestling styles, match formats and specialty experiences.
   </p>
 
   <div class="specialties-grid">
+
     <div class="specialty-category">
       <h3>Wrestling Styles</h3>
       <ul>
@@ -554,7 +543,7 @@
       <ul>
         <li>2-on-1 Wrestling</li>
         <li>Couples Wrestling</li>
-        <li>2 or More on 1 Handicap Matches</li>
+        <li>Handicap Matches</li>
         <li>Tag Team Matches</li>
         <li>Female vs. Female</li>
         <li>Armwrestling</li>
@@ -578,65 +567,93 @@
         <li>In-Gym Training</li>
       </ul>
     </div>
+
   </div>
 </section>
- 
-    <!-- Contact Section -->
 
-    <section id="contact">
+<!-- ABOUT -->
 
-      <h2>Contact</h2>
+<section id="about">
+  <h2>About Xena Wild Sessions</h2>
 
-      <div class="content-box contact-box">
-
-        <h3>Get in Touch</h3>
-
-        <p>
-          For bookings, inquiries, and private session information,
-          please contact Xena Wild Sessions directly.
-        </p>
-
-        <a class="email-address"
-           href="mailto:xenawildsession1989@gmail.com">
-          xenawildsession1989@gmail.com
-        </a>
-
-        <a class="button"
-           href="mailto:xenawildsession1989@gmail.com">
-          Email for Inquiries
-        </a>
-
-        <a class="button button-outline"
-           href="https://signal.me/#eu/YI6CmG5rBq2nOVpW4eP8qiz3T1_6iHR7x6cSFSge-c_Of6AaCihAyr3O_asreIp7"
-           target="_blank"
-           rel="noopener noreferrer">
-          Chat on Signal
-        </a>
-
-        <p class="contact-note">
-          We look forward to hearing from you.
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-
-  <footer>
-
+  <div class="content-box">
     <p>
-      &copy; 2026 Xena Wild Sessions.
-      All rights reserved.
+      Welcome to Xena Wild Sessions, a dedicated space for wrestling
+      photography and memorable athletic experiences.
     </p>
 
     <p>
-      <span>Official Website</span>
+      Explore our photo collection, discover our specialties and
+      learn more about our private session offerings.
     </p>
 
-  </footer>
+    <p>
+      We welcome inquiries from interested visitors and look forward
+      to connecting with people who appreciate the sport.
+    </p>
+
+    <p>
+      Thank you for visiting Xena Wild Sessions.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="content-box contact-box">
+    <h3>Get in Touch</h3>
+
+    <p>
+      For bookings, travel inquiries and further information,
+      contact Xena Wild Sessions directly.
+    </p>
+
+    <a class="email-address"
+       href="mailto:xenawildsession1989@gmail.com">
+      xenawildsession1989@gmail.com
+    </a>
+
+    <a class="button"
+       href="mailto:xenawildsession1989@gmail.com">
+      Email for Inquiries
+    </a>
+
+    <a class="button button-outline"
+       href="https://signal.me/#eu/YI6CmG5rBq2nOVpW4eP8qiz3T1_6iHR7x6cSFSge-c_Of6AaCihAyr3O_asreIp7"
+       target="_blank"
+       rel="noopener noreferrer">
+      Chat on Signal
+    </a>
+
+    <h3>Follow Xena Wild Sessions</h3>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/xenawildsession/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Instagram
+      </a>
+
+      <a href="https://x.com/XenaWild001"
+         target="_blank"
+         rel="noopener noreferrer">
+        X / Twitter
+      </a>
+    </div>
+
+    <p>Worldwide private session inquiries welcome.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Xena Wild Sessions. All rights reserved.</p>
+  <p><span>Official Website</span></p>
+</footer>
 
 </body>
 </html>
