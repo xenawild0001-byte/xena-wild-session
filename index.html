@@ -40,8 +40,6 @@ a {
   transition: 0.25s ease;
 }
 
-/* HEADER */
-
 header {
   min-height: 76px;
   padding: 10px 5%;
@@ -68,8 +66,6 @@ header {
   letter-spacing: 7px;
 }
 
-/* NAVIGATION */
-
 nav {
   display: flex;
   gap: 20px;
@@ -91,8 +87,6 @@ nav a:focus {
   color: var(--gold);
   border-bottom-color: var(--gold);
 }
-
-/* HERO */
 
 .hero {
   min-height: 430px;
@@ -143,8 +137,6 @@ nav a:focus {
   max-width: 460px;
 }
 
-/* BUTTONS */
-
 .button {
   display: inline-block;
   padding: 12px 25px;
@@ -160,8 +152,6 @@ nav a:focus {
   background: var(--gold);
   color: #080808;
 }
-
-/* MAIN CONTENT */
 
 main {
   max-width: 1450px;
@@ -206,8 +196,6 @@ h2 {
 .section-intro {
   color: var(--muted);
 }
-
-/* PHOTOS */
 
 .gallery {
   display: grid;
@@ -282,8 +270,6 @@ h2 {
   margin-top: 15px;
 }
 
-/* PROFILE */
-
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -316,8 +302,6 @@ h2 {
   color: var(--light-gold);
 }
 
-/* SPECIALTIES */
-
 .specialties-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -340,8 +324,6 @@ h2 {
   color: #ddd;
   margin-bottom: 8px;
 }
-
-/* STATS */
 
 .stats-section {
   padding: 55px 0;
@@ -408,8 +390,6 @@ h2 {
   margin-top: 5px;
 }
 
-/* FOOTER */
-
 footer {
   text-align: center;
   padding: 35px 15px;
@@ -425,8 +405,6 @@ footer .tagline {
   font-size: 22px;
   color: var(--light-gold);
 }
-
-/* RESPONSIVE DESIGN */
 
 @media (max-width: 1000px) {
   .stats-grid {
@@ -524,8 +502,6 @@ footer .tagline {
 
 <body>
 
-<!-- HEADER -->
-
 <header id="home">
   <a href="#home" class="logo">
     XENA WILD
@@ -542,12 +518,9 @@ footer .tagline {
   </nav>
 </header>
 
-<!-- HERO -->
-
 <div class="hero">
   <div class="hero-content">
     <div class="hero-label">Welcome to</div>
-
     <h1>Xena Wild</h1>
     <h2>Sessions</h2>
 
@@ -563,8 +536,6 @@ footer .tagline {
 </div>
 
 <main>
-
-<!-- PHOTOS -->
 
 <section id="photos">
   <div class="section-heading">
@@ -601,7 +572,7 @@ footer .tagline {
   </div>
 </section>
 
-<!-- VIDEOS -->
+<!-- TWO VIDEO PLAYERS -->
 
 <section id="videos" class="video-section">
 
@@ -616,25 +587,28 @@ footer .tagline {
   <div class="video-grid">
 
     <div class="video-card">
-
       <video controls playsinline preload="metadata">
         <source src="ssstwitter.com_1793279911778.mp4" type="video/mp4">
         Your browser does not support the video player.
       </video>
+      <h3>Featured Video 1</h3>
+    </div>
 
-      <h3>Featured Video</h3>
-
+    <div class="video-card">
+      <video controls playsinline preload="metadata">
+        <source src="ssstwitter.com_1793280122693.mp4" type="video/mp4">
+        Your browser does not support the video player.
+      </video>
+      <h3>Featured Video 2</h3>
     </div>
 
   </div>
 
   <p class="video-note">
-    Video playback may depend on your browser and the video file format.
+    Select the play button on either video to watch.
   </p>
 
 </section>
-
-<!-- ABOUT -->
 
 <section id="about">
 
@@ -684,8 +658,6 @@ footer .tagline {
   </div>
 
 </section>
-
-<!-- SPECIALTIES -->
 
 <section id="specialties">
 
@@ -750,8 +722,6 @@ footer .tagline {
 
 </section>
 
-<!-- STATS -->
-
 <section id="stats" class="stats-section">
 
   <div class="stats-heading">
@@ -763,18 +733,12 @@ footer .tagline {
 
     <div class="stat-card">
       <h3>Height</h3>
-      <p>
-        5'9"
-        <span class="stat-detail">169 cm</span>
-      </p>
+      <p>5'9"<span class="stat-detail">169 cm</span></p>
     </div>
 
     <div class="stat-card">
       <h3>Weight</h3>
-      <p>
-        140 lbs
-        <span class="stat-detail">63.5 kg</span>
-      </p>
+      <p>140 lbs<span class="stat-detail">63.5 kg</span></p>
     </div>
 
     <div class="stat-card">
@@ -790,8 +754,6 @@ footer .tagline {
   </div>
 
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact">
 
@@ -817,16 +779,14 @@ footer .tagline {
 
       <p>
         <a href="https://www.instagram.com/xenawildsession/"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           Instagram
         </a>
       </p>
 
       <p>
         <a href="https://x.com/XenaWild001"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           X / Twitter
         </a>
       </p>
@@ -841,8 +801,7 @@ footer .tagline {
 
       <p>
         <a href="https://signal.me/#eu/YI6CmG5rBq2nOVpW4eP8qiz3T1_6iHR7x6cSFSge-c_Of6AaCihAyr3O_asreIp7"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           Chat on Signal →
         </a>
       </p>
@@ -853,8 +812,6 @@ footer .tagline {
 </section>
 
 </main>
-
-<!-- FOOTER -->
 
 <footer>
 
