@@ -7,16 +7,10 @@
 
 <title>Xena Wild Sessions | Official Website</title>
 
-<meta name="description" content="Explore Xena Wild Sessions, wrestling photography, specialties, profile statistics and private session inquiries.">
-
+<meta name="description" content="Explore Xena Wild Sessions, wrestling photography, videos, specialties, profile statistics and private session inquiries.">
 <meta name="theme-color" content="#080808">
 
 <style>
-
-/* =========================
-   GLOBAL SETTINGS
-========================= */
-
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -48,9 +42,7 @@ html {
   scroll-padding-top: 85px;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header {
   min-height: 76px;
@@ -78,13 +70,11 @@ header {
   letter-spacing: 7px;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 nav {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -103,16 +93,13 @@ nav a:focus {
   border-bottom-color: var(--gold);
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO */
 
 .hero {
   min-height: 430px;
   display: flex;
   align-items: center;
   padding: 55px 5%;
-
   background:
     linear-gradient(
       90deg,
@@ -121,7 +108,6 @@ nav a:focus {
       rgba(0,0,0,.12)
     ),
     url("IMG_0856.jpeg") center 35% / cover no-repeat;
-
   border-bottom: 1px solid var(--gold);
 }
 
@@ -158,9 +144,7 @@ nav a:focus {
   max-width: 460px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .button {
   display: inline-block;
@@ -178,9 +162,7 @@ nav a:focus {
   color: #080808;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* MAIN CONTENT */
 
 main {
   max-width: 1450px;
@@ -226,9 +208,7 @@ h2 {
   color: var(--muted);
 }
 
-/* =========================
-   PHOTO GALLERY
-========================= */
+/* PHOTOS */
 
 .gallery {
   display: grid;
@@ -263,16 +243,47 @@ h2 {
   font-size: 13px;
 }
 
-.view-all {
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
+/* VIDEOS */
+
+.video-section {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-/* =========================
-   PROFILE CONTENT
-========================= */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
+.video-card h3 {
+  color: var(--light-gold);
+  padding: 12px 15px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.video-note {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* PROFILE */
 
 .profile-grid {
   display: grid;
@@ -306,9 +317,7 @@ h2 {
   color: var(--light-gold);
 }
 
-/* =========================
-   SPECIALTIES
-========================= */
+/* SPECIALTIES */
 
 .specialties-grid {
   display: grid;
@@ -333,9 +342,7 @@ h2 {
   margin-bottom: 8px;
 }
 
-/* =========================
-   STATS SECTION
-========================= */
+/* STATS */
 
 .stats-section {
   padding: 55px 0;
@@ -394,7 +401,7 @@ h2 {
   margin: 0;
 }
 
-.stat-card .stat-detail {
+.stat-detail {
   display: block;
   color: var(--muted);
   font-size: 13px;
@@ -402,9 +409,7 @@ h2 {
   margin-top: 5px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
   text-align: center;
@@ -422,32 +427,29 @@ footer .tagline {
   color: var(--light-gold);
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
-
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-}
-
-@media (max-width: 900px) {
-
   .gallery {
     grid-template-columns: repeat(3, 1fr);
   }
+}
 
+@media (max-width: 900px) {
   .profile-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-
   header {
     flex-direction: column;
     gap: 12px;
@@ -504,10 +506,7 @@ footer .tagline {
   }
 
   .profile-grid,
-  .specialties-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .specialties-grid,
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -520,55 +519,33 @@ footer .tagline {
     gap: 10px;
     flex-wrap: wrap;
   }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header id="home">
-
   <a href="#home" class="logo">
     XENA WILD
     <span>SESSIONS</span>
   </a>
 
   <nav aria-label="Main navigation">
-
     <a href="#home">Home</a>
-
     <a href="#photos">Photos</a>
-
+    <a href="#videos">Videos</a>
     <a href="#about">About</a>
-
     <a href="#stats">Stats</a>
-
     <a href="#contact">Contact</a>
-
   </nav>
-
 </header>
 
-<!-- =========================
-     HERO SECTION
-========================= -->
-
 <div class="hero">
-
   <div class="hero-content">
-
-    <div class="hero-label">
-      Welcome to
-    </div>
+    <div class="hero-label">Welcome to</div>
 
     <h1>Xena Wild</h1>
-
     <h2>Sessions</h2>
 
     <p>
@@ -576,111 +553,80 @@ footer .tagline {
       &amp; Exclusive Sessions
     </p>
 
-    <a href="#photos" class="button">
-      VIEW PHOTOS →
-    </a>
-
-    <a href="#contact" class="button">
-      CONTACT →
-    </a>
-
+    <a href="#photos" class="button">VIEW PHOTOS →</a>
+    <a href="#videos" class="button">WATCH VIDEOS →</a>
+    <a href="#contact" class="button">CONTACT →</a>
   </div>
-
 </div>
-
-<!-- =========================
-     MAIN CONTENT
-========================= -->
 
 <main>
 
-<!-- =========================
-     PHOTOS
-========================= -->
-
 <section id="photos">
-
   <div class="section-heading">
-
     <h2>Featured Photos</h2>
-
-    <a href="#photos" class="view-all">
-      VIEW ALL PHOTOS →
-    </a>
-
   </div>
 
   <div class="gallery">
 
     <figure class="card">
-
-      <img
-        src="IMG_0856.jpeg"
-        alt="Xena Wild photograph 1"
-      >
-
+      <img src="IMG_0856.jpeg" alt="Xena Wild photograph 1">
       <figcaption>Photo 1</figcaption>
-
     </figure>
 
     <figure class="card">
-
-      <img
-        src="IMG_0865.jpeg"
-        alt="Xena Wild photograph 2"
-      >
-
+      <img src="IMG_0865.jpeg" alt="Xena Wild photograph 2">
       <figcaption>Photo 2</figcaption>
-
     </figure>
 
     <figure class="card">
-
-      <img
-        src="IMG_0878.jpeg"
-        alt="Xena Wild photograph 3"
-      >
-
+      <img src="IMG_0878.jpeg" alt="Xena Wild photograph 3">
       <figcaption>Photo 3</figcaption>
-
     </figure>
 
     <figure class="card">
-
-      <img
-        src="IMG_0879.jpeg"
-        alt="Xena Wild photograph 4"
-      >
-
+      <img src="IMG_0879.jpeg" alt="Xena Wild photograph 4">
       <figcaption>Photo 4</figcaption>
-
     </figure>
 
     <figure class="card">
-
-      <img
-        src="IMG_0880.jpeg"
-        alt="Xena Wild photograph 5"
-      >
-
+      <img src="IMG_0880.jpeg" alt="Xena Wild photograph 5">
       <figcaption>Photo 5</figcaption>
-
     </figure>
 
   </div>
-
 </section>
 
-<!-- =========================
-     ABOUT
-========================= -->
+<section id="videos" class="video-section">
+  <div class="section-heading">
+    <h2>Featured Videos</h2>
+  </div>
+
+  <p class="section-intro">
+    Explore video highlights from Xena Wild Sessions.
+  </p>
+
+  <div class="video-grid">
+
+    <div class="video-card">
+      <video controls playsinline preload="metadata">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video player.
+      </video>
+
+      <h3>Featured Video</h3>
+    </div>
+
+  </div>
+
+  <p class="video-note">
+    Video playback may depend on your browser and the video file format.
+  </p>
+</section>
 
 <section id="about">
-
   <div class="profile-grid">
 
     <div class="profile-box">
-
       <h2>About Me</h2>
 
       <p>
@@ -692,65 +638,39 @@ footer .tagline {
         Explore our photography, discover our specialties and
         get in touch for private session inquiries.
       </p>
-
     </div>
 
     <div class="profile-box">
-
       <h2>Specialties</h2>
 
       <ul>
-
         <li>Wrestling Sessions</li>
-
         <li>Grappling</li>
-
         <li>Fitness &amp; Athletic</li>
-
         <li>Fantasy Wrestling</li>
-
         <li>Photo Shoots</li>
-
         <li>Custom Requests</li>
-
       </ul>
 
-      <a href="#specialties">
-        Explore Specialties →
-      </a>
-
+      <a href="#specialties">Explore Specialties →</a>
     </div>
 
     <div class="profile-box">
-
       <h2>Profile</h2>
 
       <ul>
-
         <li>Name: Xena Wild</li>
-
         <li>Brand: Xena Wild Sessions</li>
-
         <li>Location: Italy</li>
-
         <li>Travel: Worldwide inquiries</li>
-
         <li>Category: Wrestling &amp; Photography</li>
-
       </ul>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     SPECIALTIES
-========================= -->
-
 <section id="specialties">
-
   <h2>Our Specialties</h2>
 
   <p class="section-intro">
@@ -760,173 +680,98 @@ footer .tagline {
   <div class="specialties-grid">
 
     <div class="specialty-category">
-
       <h3>Wrestling Styles</h3>
 
       <ul>
-
         <li>Competitive Wrestling</li>
-
         <li>Semi-Competitive Wrestling</li>
-
         <li>Fantasy Wrestling</li>
-
         <li>Pro Wrestling</li>
-
         <li>Submission Wrestling</li>
-
         <li>Pin Wrestling</li>
-
         <li>Grappling</li>
-
         <li>Brazilian Jiu-Jitsu</li>
-
         <li>Jiu-Jitsu</li>
-
         <li>Catfighting</li>
-
       </ul>
-
     </div>
 
     <div class="specialty-category">
-
       <h3>Match Formats</h3>
 
       <ul>
-
         <li>2-on-1 Wrestling</li>
-
         <li>Couples Wrestling</li>
-
         <li>Handicap Matches</li>
-
         <li>Tag Team Matches</li>
-
         <li>Female vs. Female</li>
-
         <li>Armwrestling</li>
-
         <li>Foxy Boxing</li>
-
       </ul>
-
     </div>
 
     <div class="specialty-category">
-
       <h3>Specialty Experiences</h3>
 
       <ul>
-
         <li>Facesitting</li>
-
         <li>Scissoring</li>
-
         <li>Headscissors</li>
-
         <li>Tickle Wrestling</li>
-
         <li>Belly Punching</li>
-
         <li>Feats of Strength</li>
-
         <li>Lift and Carry</li>
-
         <li>Posing</li>
-
         <li>Modeling</li>
-
         <li>Custom Videos</li>
-
         <li>In-Gym Training</li>
-
       </ul>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     STATS
-========================= -->
-
 <section id="stats" class="stats-section">
-
   <div class="stats-heading">
-
     <h2>Stats</h2>
-
-    <p>
-      Athletic Profile &amp; Experience
-    </p>
-
+    <p>Athletic Profile &amp; Experience</p>
   </div>
 
   <div class="stats-grid">
 
     <div class="stat-card">
-
       <h3>Height</h3>
-
       <p>
         5'9"
-        <span class="stat-detail">
-          169 cm
-        </span>
+        <span class="stat-detail">169 cm</span>
       </p>
-
     </div>
 
     <div class="stat-card">
-
       <h3>Weight</h3>
-
       <p>
         140 lbs
-        <span class="stat-detail">
-          63.5 kg
-        </span>
+        <span class="stat-detail">63.5 kg</span>
       </p>
-
     </div>
 
     <div class="stat-card">
-
       <h3>Physique</h3>
-
-      <p>
-        Athletic
-      </p>
-
+      <p>Athletic</p>
     </div>
 
     <div class="stat-card">
-
       <h3>Years of Experience</h3>
-
-      <p>
-        5–15 Years Plus
-      </p>
-
+      <p>5–15 Years Plus</p>
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
-
 <section id="contact">
-
   <div class="profile-grid">
 
     <div class="profile-box">
-
       <h2>Contact</h2>
 
       <p>
@@ -935,53 +780,35 @@ footer .tagline {
       </p>
 
       <p>
-
         <a href="mailto:xenawildsession1989@gmail.com">
-
           xenawildsession1989@gmail.com
-
         </a>
-
       </p>
-
     </div>
 
     <div class="profile-box">
-
       <h2>Social Media</h2>
 
       <p>
-
         <a
           href="https://www.instagram.com/xenawildsession/"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-
+          rel="noopener noreferrer">
           Instagram
-
         </a>
-
       </p>
 
       <p>
-
         <a
           href="https://x.com/XenaWild001"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-
+          rel="noopener noreferrer">
           X / Twitter
-
         </a>
-
       </p>
-
     </div>
 
     <div class="profile-box">
-
       <h2>Private Sessions</h2>
 
       <p>
@@ -989,49 +816,31 @@ footer .tagline {
       </p>
 
       <p>
-
         <a
           href="https://signal.me/#eu/YI6CmG5rBq2nOVpW4eP8qiz3T1_6iHR7x6cSFSge-c_Of6AaCihAyr3O_asreIp7"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-
+          rel="noopener noreferrer">
           Chat on Signal →
-
         </a>
-
       </p>
-
     </div>
 
   </div>
-
 </section>
 
 </main>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
-
   <p class="tagline">
-
     Real Moments. Real Strength. Xena Wild Sessions.
-
   </p>
 
   <p>
     © 2026 Xena Wild Sessions. All rights reserved.
   </p>
 
-  <p>
-    Official Website
-  </p>
-
+  <p>Official Website</p>
 </footer>
 
 </body>
-
 </html>
