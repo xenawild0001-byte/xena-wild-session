@@ -40,6 +40,105 @@ a {
   transition: 0.25s ease;
 }
 
+/* 18+ AGE CONFIRMATION SCREEN */
+
+.age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.age-gate-content {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 25px;
+  background: #111;
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.12);
+}
+
+.age-gate-logo {
+  color: var(--light-gold);
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+.age-gate-subtitle {
+  color: var(--gold);
+  letter-spacing: 6px;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.age-gate h1 {
+  color: var(--light-gold);
+  font-family: Georgia, serif;
+  font-size: 29px;
+  margin: 0 0 18px;
+}
+
+.age-gate p {
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.age-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.age-button {
+  min-width: 120px;
+  padding: 13px 30px;
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--light-gold);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.age-button.yes {
+  background: var(--gold);
+  color: #080808;
+}
+
+.age-button:hover {
+  background: var(--light-gold);
+  color: #080808;
+}
+
+.age-denied {
+  display: none;
+  color: #f0d77a;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.age-footer {
+  color: #777;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+/* WEBSITE HEADER */
+
 header {
   min-height: 76px;
   padding: 10px 5%;
@@ -496,11 +595,56 @@ footer .tagline {
     gap: 10px;
     flex-wrap: wrap;
   }
+
+  .age-gate-content {
+    padding: 35px 18px;
+  }
+
+  .age-gate h1 {
+    font-size: 25px;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- 18+ AGE CONFIRMATION -->
+
+<div class="age-gate" id="ageGate">
+  <div class="age-gate-content">
+
+    <div class="age-gate-logo">XENA WILD</div>
+    <div class="age-gate-subtitle">SESSIONS</div>
+
+    <h1>Are you over 18 years of age?</h1>
+
+    <p>
+      This website contains adult content and is intended
+      for individuals aged 18 or over. By clicking 'Yes',
+      you confirm that you are at least 18 years old.
+    </p>
+
+    <div class="age-buttons">
+      <button class="age-button yes" onclick="confirmAge()">
+        YES
+      </button>
+
+      <button class="age-button" onclick="denyAge()">
+        NO
+      </button>
+    </div>
+
+    <div class="age-denied" id="ageDenied">
+      Sorry, you must be at least 18 years old to enter this website.
+    </div>
+
+    <div class="age-footer">
+      Xena Wild Sessions © 2026
+    </div>
+
+  </div>
+</div>
 
 <header id="home">
   <a href="#home" class="logo">
@@ -571,8 +715,6 @@ footer .tagline {
 
   </div>
 </section>
-
-<!-- TWO VIDEO PLAYERS -->
 
 <section id="videos" class="video-section">
 
@@ -826,6 +968,24 @@ footer .tagline {
   <p>Official Website</p>
 
 </footer>
+
+<script>
+function confirmAge() {
+  localStorage.setItem("xenaAgeConfirmed", "yes");
+
+  document.getElementById("ageGate").style.display = "none";
+}
+
+function denyAge() {
+  document.getElementById("ageDenied").style.display = "block";
+}
+
+/* Check whether the visitor has already confirmed */
+
+if (localStorage.getItem("xenaAgeConfirmed") === "yes") {
+  document.getElementById("ageGate").style.display = "none";
+}
+</script>
 
 </body>
 </html>
